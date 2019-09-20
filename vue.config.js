@@ -22,18 +22,32 @@ module.exports = {
     }
   },
   // 配置px2rem 自动将px转为rem
-  chainWebpack: config => {
-    config.module
-      .rule('css')
-      .test(/\.css$/)
-      .oneOf('vue')
-      .resourceQuery(/\?vue/)
-      .use('px2rem')
-      .loader('px2rem-loader')
-      .options({
-        remUnit: 75 //remUnit为转换为rem的基础 设计稿/等分数=remUnit
-      })
+  css: {
+    loaderOptions: {
+      css: {},
+      postcss: {
+        plugins: [
+          require('postcss-px2rem')({
+            remUnit: 75
+          })
+        ]
+      }
+    }
   },
+  // rem适配
+  // chainWebpack: config => {
+  //   config.module
+  //     .rule('css')
+  //     .test(/\.css$/)
+  //     .oneOf('vue')
+  //     .resourceQuery(/\?vue/)
+  //     .use('px2rem')
+  //     .loader('px2rem-loader')
+  //     .options({
+  //       remUnit: 75
+  //     })
+  // },
+
 
   // 配置开发服务中的代理
   devServer: {

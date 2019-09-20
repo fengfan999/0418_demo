@@ -12,15 +12,19 @@
       </div>
       <div class="bottom">
         <div class="inner">
-          <span class="on">推荐</span>
+          <span >推荐</span>
           <span>原家生活</span>
           <span>服饰鞋包</span>
           <span>美食酒水</span>
-          <span>个人清洁</span>
+          <span>个护清洁</span>
+          <span>母婴亲子</span>
+          <span>运动旅行</span>
+          <span>数码家电</span>
+          <span>全球特色</span>
         </div>
-        <div class="icon1">
+        <!-- <div class="icon1">
           <div class="icon"></div>
-        </div>
+        </div> -->
       </div>
     </div>
     <!--轮播-->
@@ -116,7 +120,7 @@ new Swiper(".swiper-container", {
 });
 export default {};
 </script>
-<style lang='stylus' rel='stylesheet/stylus'>
+<style lang='stylus' rel='stylesheet/stylus' scoped>
 .header
   width: 100%
   height: 148px
@@ -168,24 +172,15 @@ export default {};
       margin-left: 15px
   .bottom
     position: relative
-    width: 100%
     height: 60px
     .inner
+      height 60px
       font-size: 26px
-      text-align: center
-      line-height: 60px
-      .on
-        color: #BE3F45
-      ::after
-        content: ''
-        position: absolute
-        left: 50px
-        bottom: 0
-        background-color: red
-        width: 10%
-        height: 5px
-      span
-        width: 88px
+      overflow hidden
+      display flex
+      flex-flow row nowrap
+      span 
+        width: 144px
         height: 60px
         margin: 20px
     .icon1
